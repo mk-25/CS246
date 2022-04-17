@@ -12,8 +12,6 @@ class node{
       int aofspace;
       node* next;
       node* prev;
-      node* head;
-
 };
 
 int main()
@@ -29,8 +27,6 @@ int main()
     heapfile->next=nullptr;
     heapfile->prev=nullptr;
     node* head = heapfile;
-
-
 
     int inp;
     cin >> inp;
@@ -49,13 +45,10 @@ int main()
                 {
                     cout <<" " << heapfile->nrecords;
                     heapfile = heapfile->next;
-
                 }
                 cout << endl;
-
             }
             heapfile = head;
-
         }
         if(inp==1)
         {
@@ -87,17 +80,14 @@ int main()
                }
                if(heapfile->next==nullptr)
                {
-
                     if(rsize+4 <= (heapfile->rspace))
                     {
                         (heapfile->nrecords)++;
                         (heapfile->v).push_back(pkey);
                          heapfile->rspace = (heapfile->rspace) - rsize - 4;
-
                     }
                     else
                     {
-
                         node* newnode = new node;
                         heapfile->next = newnode;
                         newnode->next = nullptr;
@@ -111,10 +101,8 @@ int main()
                         (heapfile->v).push_back(pkey);
                         heapfile->rspace = (heapfile->rspace) - rsize - 4;
                         npages++;
-
                     }
                }
-
             }
             heapfile = head;
         }
@@ -145,8 +133,6 @@ int main()
             heapfile = head;
         }
         cin >> inp;
-
     }
-
     return 0;
 }
